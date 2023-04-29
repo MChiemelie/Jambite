@@ -5,7 +5,9 @@ function CountdownTimer() {
 
   useEffect(() => {
     const timer = setInterval(() => {
+     if(countdown){
       setCountdown(countdown => countdown - 1);
+     }
     }, 1000);
 
     return () => clearInterval(timer);
@@ -13,7 +15,6 @@ function CountdownTimer() {
 
   return (
     <div>
-      <p>Countdown:</p>
       <p>{Math.floor(countdown / 60)}:{countdown % 60 < 10 ? '0' : ''}{countdown % 60}</p>
     </div>
   );

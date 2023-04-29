@@ -16,7 +16,7 @@ const Nav: React.FC = () => {
       src={account}
       height={50}
       width={50}
-      alt='acc'
+      alt='account'
       />
     </menu>
     </>

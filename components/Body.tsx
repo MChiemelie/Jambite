@@ -4,14 +4,14 @@ const Body: React.FC = () => {
   return (
     <>
     <div
-    className="m-16 md:m-4"
+    className='m-16 md:m-4'
     >
     <h1
-    className='font-Bold text-2xl m-4 p-4'>
-      Question 1
+    className='font-Bold text-4xl m-4 p-4'>
+      Question 1/50
     </h1>
     <p
-    className='font-Bold text-2xl m-4 p-4'
+    className='font-Bold text-4xl m-4 p-4'
     >Where is Nigeria's Capital?</p>
     <div>
     <input

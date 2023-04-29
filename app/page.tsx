@@ -17,7 +17,7 @@ export default function Home() {
        font-extrabold font-Söhne text-center text-4xl 
        md:text-7xl md:font-extrabold sm:font-extrabold leading-9 tracking-wider'
        >
-       Welcome to Jambite!
+       Ace Your JAMB!
        </h1>
        <p
        className='m-2 p-2 mx-14
