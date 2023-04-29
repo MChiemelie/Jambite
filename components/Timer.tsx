@@ -11,7 +11,7 @@ function CountdownTimer() {
     }, 1000);
 
     return () => clearInterval(timer);
-  }, []);
+  });
 
   return (
     <div>

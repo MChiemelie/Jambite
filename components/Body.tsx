@@ -12,7 +12,7 @@ const Body: React.FC = () => {
     </h1>
     <p
     className='font-Bold text-4xl m-4 p-4'
-    >Where is Nigeria's Capital?</p>
+    >Where is Nigeria&apos;s Capital?</p>
     <div>
     <input
         id="Lagos"
