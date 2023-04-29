@@ -1,13 +1,7 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "app/page.tsx",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
-    { "src": "/(.*)", "dest": "/app/page.tsx" }
+    { "src": "/app/page.tsx" }
   ],
   "env": {
     "NODE_ENV": "production"
