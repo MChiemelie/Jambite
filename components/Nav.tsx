@@ -1,5 +1,6 @@
 'use client';
 
+import React from "react";
 import Image from 'next/image';
 import Timer from "../components/Timer";
 import account from '../public/account.png'
