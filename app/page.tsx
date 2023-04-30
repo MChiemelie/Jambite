@@ -20,8 +20,8 @@ export default function Home() {
        Ace Your JAMB!
        </h1>
        <p
-       className='m-2 p-2 mx-14
-       font-meduim font-Söhne 
+       className='m-2 p-2 mx-14 sm:mx-6
+       font-md font-Söhne 
        text-center text-lg leading-7 tracking-wider sm:leading-7 sm:tracking-wider'
        >
         Are you preparing for the JAMB Computer-Based Test? Look no further than Jambite! Our website provides free study materials and resources to help you succeed on exam day. From practice questions to online mock exams, we&apos;ve got everything you need to ace the JAMB CBT. Sign up today and start your journey towards academic success!
