@@ -2,7 +2,7 @@
 
 import React from 'react'
 
-const Body: React.FC = () => {
+const Question: React.FC = () => {
   return (
     <>
     <div
@@ -88,4 +88,4 @@ const Body: React.FC = () => {
   )
 };
 
-export default Body;
+export default Question;
