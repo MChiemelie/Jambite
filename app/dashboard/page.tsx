@@ -1,6 +1,6 @@
 import { env } from 'process';
 
-async function getData() {
+async function getQuestions() {
   const res = await fetch("https://questions.aloc.com.ng/api/v2/m?subject=chemistry", {
     headers: {
       'Accept': 'application/json',
@@ -14,11 +14,23 @@ async function getData() {
 }
  
 export default async function Page () {
-  const data = await getData();
- 
+  const questions = await getQuestions();
+  const questionsData = JSON.stringify(questions);
+  const { subject, status, total, data } = JSON.parse(questionsData);
+
   return (
     <>
-    <p>{JSON.stringify(data)}</p>
+      <h1>Subject: {subject}</h1>
+      {data.map((question: { id: number, question: string, option: string }) => (
+        <div key={question.id}>
+        <p>{question.question}</p>
+        <ul>
+          {Object.values(question.option).map((option, index) => (
+            <li key={index}>{option}</li>
+          ))}
+        </ul>
+        </div>
+        ))}
     </>
   );
 }
