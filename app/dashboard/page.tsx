@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 type Question = {
   id: number;
@@ -54,27 +54,27 @@ const Quiz = ({ subject, data }: QuizProps) => {
   );
 };
 
-export default async function Page() {
+export default function Page() {
   const [quizData, setQuizData] = useState<QuizProps | null>(null);
 
   const fetchData = async () => {
+    const accessToken = process.env.ACCESS_TOKEN;
     const res = await fetch('https://questions.aloc.com.ng/api/v2/m?subject=chemistry', {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'AccessToken': process.env.DATA_API_KEY as string,
+        'AccessToken': accessToken as string,
       },
       method: 'GET',
     });
     const json = await res.json();
-    console.log(json)
     const { subject, data } = json;
-    setQuizData({ subject, data, });
+    setQuizData({ subject, data });
   };
 
-  useState(() => {
+  useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   return (
     <>
