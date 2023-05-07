@@ -1,36 +1,84 @@
-import { env } from 'process';
+'use client'
 
-async function getQuestions() {
-  const res = await fetch("https://questions.aloc.com.ng/api/v2/m?subject=chemistry", {
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
-      'AccessToken': env.API_TOKEN as string,
-    },
-    method: "GET"
-  });
+import React, { useState } from 'react';
 
-  return res.json();
-}
- 
-export default async function Page () {
-  const questions = await getQuestions();
-  const questionsData = JSON.stringify(questions);
-  const { subject, status, total, data } = JSON.parse(questionsData);
+type Question = {
+  id: number;
+  question: string;
+  option: { [key: string]: string };
+  answer: string;
+};
+
+type QuizProps = {
+  subject: string;
+  data: Question[];
+};
+
+const Quiz = ({ subject, data }: QuizProps) => {
+  const [selectedAnswers, setSelectedAnswers] = useState<{ [key: number]: string }>({});
+
+  const handleAnswerSelection = (questionId: number, selectedOption: string) => {
+    setSelectedAnswers((prevAnswers) => ({ ...prevAnswers, [questionId]: selectedOption }));
+  };
+
+  const checkAnswer = (questionId: number) => {
+    const selectedOption = selectedAnswers[questionId];
+    if (selectedOption === undefined) {
+      return 'Please select an option';
+    }
+    const correctAnswer = data.find((question) => question.id === questionId)?.answer;
+    if (correctAnswer === selectedOption) {
+      return 'Correct!';
+    } else {
+      return 'Incorrect';
+    }
+  };
 
   return (
     <>
-      <h1>Subject: {subject}</h1>
-      {data.map((question: { id: number, question: string, option: string }) => (
+      <h1 className='font-bold text-center text-4xl'>Subject: {subject}</h1>
+      {data?.map((question) => (
         <div key={question.id}>
-        <p>{question.question}</p>
-        <ul>
-          {Object.values(question.option).map((option, index) => (
-            <li key={index}>{option}</li>
-          ))}
-        </ul>
+          <p>{question.question}</p>
+          <ul>
+            {Object.entries(question.option).map(([key, value]) => (
+              <li key={key} onClick={() => handleAnswerSelection(question.id, key)}>
+                {value} {selectedAnswers[question.id] === key ? '✅' : ''}
+              </li>
+            ))}
+          </ul>
+          <p>{selectedAnswers[question.id] !== undefined ? checkAnswer(question.id) : ''}</p>
         </div>
-        ))}
+      ))}
+    </>
+  );
+};
+
+export default async function Page() {
+  const [quizData, setQuizData] = useState<QuizProps | null>(null);
+
+  const fetchData = async () => {
+    const res = await fetch('https://questions.aloc.com.ng/api/v2/m?subject=chemistry', {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'AccessToken': process.env.DATA_API_KEY as string,
+      },
+      method: 'GET',
+    });
+    const json = await res.json();
+    console.log(json)
+    const { subject, data } = json;
+    setQuizData({ subject, data, });
+  };
+
+  useState(() => {
+    fetchData();
+  });
+
+  return (
+    <>
+      {quizData ? <Quiz subject={quizData.subject} data={quizData.data} /> : <p>Loading..</p>}
     </>
   );
 }
