@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link';
 import { Inter } from 'next/font/google'
 import jamb from '../public/jamb.jpg'
+import Feature from "../components/Feature";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -32,6 +33,14 @@ export default function Home() {
        className='bg-emerald-900 p-4 m-4 align-middle rounded mx-auto'
        >Get Started</button>
        </Link>
+        <Feature
+        description="Practice with over 20, 000 NECO past questions"
+        subjects={['English language', 'Mathematics', 'Commerce', 'Accounting', 'Biology',
+                          'Physics', 'Chemistry', 'English literature', 'Government', 
+                          'Christian Religious Knowledge', 'Geography', 'Economics', 'Islamic Religious Knowledge',
+                        'Civic Education', 'Insurance', 'Current Affairs', 'History']}
+        date='1970 - 2020'
+        />
     </>
   )
 }

@@ -35,7 +35,7 @@
     ".next/types/**/*.ts",
     "*.png",
     "styles/**/*.css"
-  ],
+, "app/dashboard/page.tsx"  ],
   "exclude": [
     "node_modules"
   ]

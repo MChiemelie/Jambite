@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -19,7 +19,7 @@
     "eslint": "8.39.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "typescript": "5.0.4",
+    "turbopack": "^0.0.1",
     "vercel": "^29.0.0"
   },
   "devDependencies": {
@@ -29,7 +29,8 @@
     "eslint-config-next": "^13.4.1",
     "next": "^13.4.1",
     "postcss": "^8.4.23",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.2",
+    "typescript": "^5.0.4"
   },
   "description": "Jambite is a website that helps prospective students prepare for the Joint Admissions and Matriculation Board (JAMB) Computer-Based Test (CBT). JAMB is an examination board in Nigeria that conducts entrance examinations for students seeking admission into universities, polytechnics, and other higher institutions.",
   "main": "next.config.js",

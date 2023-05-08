@@ -58,12 +58,11 @@ export default function Page() {
   const [quizData, setQuizData] = useState<QuizProps | null>(null);
 
   const fetchData = async () => {
-    const accessToken = process.env.ACCESS_TOKEN;
     const res = await fetch('https://questions.aloc.com.ng/api/v2/m?subject=chemistry', {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'AccessToken': accessToken as string,
+        'AccessToken': process.env.ACCESS_TOKEN as string,
       },
       method: 'GET',
     });

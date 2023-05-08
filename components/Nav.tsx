@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from 'next/image';
-import Timer from "../components/Timer";
+import Timer from "./Timer";
 import account from '../public/account.png'
 const Nav: React.FC = () => {
   return (
