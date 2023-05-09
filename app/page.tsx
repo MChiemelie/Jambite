@@ -34,7 +34,7 @@ export default function Home() {
        >Get Started</button>
        </Link>
         <Feature
-        description="Practice with over 20, 000 NECO past questions"
+        description="Practice with over 20, 000 JAMB past questions"
         subjects={['English language', 'Mathematics', 'Commerce', 'Accounting', 'Biology',
                           'Physics', 'Chemistry', 'English literature', 'Government', 
                           'Christian Religious Knowledge', 'Geography', 'Economics', 'Islamic Religious Knowledge',
