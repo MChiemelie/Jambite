@@ -43,7 +43,7 @@ const Quiz = ({ subject, data }: QuizProps) => {
           <ul>
             {Object.entries(question.option).map(([key, value]) => (
               <li key={key} onClick={() => handleAnswerSelection(question.id, key)}>
-                {value} {selectedAnswers[question.id] === key ? '' : ''}
+                {selectedAnswers[question.id] === key ? '' : ''}
               </li>
             ))}
           </ul>
@@ -59,7 +59,7 @@ async function getSubject(subject: string) {
    headers: {
      'Accept': 'application/json',
      'Content-Type': 'application/json',
-     'AccessToken': process.env.accessToken as string,
+     'AccessToken': 'QB-02741ae27ac6dae5c618',
    },
 
    method: 'GET',
