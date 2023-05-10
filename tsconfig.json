@@ -5,6 +5,7 @@
       "DOM",
       "ESNext"
     ],
+    "types": ["aria-query"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,

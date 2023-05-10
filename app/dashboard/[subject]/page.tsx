@@ -19,7 +19,7 @@ const Quiz = ({ subject, data }: QuizProps) => {
 
   const handleAnswerSelection = (questionId: number, selectedOption: string) => {
     setSelectedAnswers((prevAnswers) => ({ ...prevAnswers, [questionId]: selectedOption }));
-  };
+  };  
 
   const checkAnswer = (questionId: number) => {
     const selectedOption = selectedAnswers[questionId];
@@ -37,22 +37,26 @@ const Quiz = ({ subject, data }: QuizProps) => {
   return (
     <>
       <h1 className='font-bold text-center text-4xl'>Subject: {subject}</h1>
-      {data?.map((question) => (
+      {data?.map((question, index) => (
         <div key={question.id}>
-          <p>{question.question}</p>
-          <ul>
-            {Object.entries(question.option).map(([key, value]) => (
-              <li key={key} onClick={() => handleAnswerSelection(question.id, key)}>
-                {selectedAnswers[question.id] === key ? '' : ''}
-              </li>
-            ))}
-          </ul>
+          <p>{index + 1}. {question.question}</p>
+          <ol type='A'>
+            {Object.entries(question.option).map(([key, value]) => {
+              (value === null) ? '' : "";
+              return (
+                <li key={key} onClick={() => handleAnswerSelection(question.id, value)}>
+                  {key}. {value}
+                </li>
+              );
+            })}
+          </ol>
           <p>{selectedAnswers[question.id] !== undefined ? checkAnswer(question.id) : ''}</p>
         </div>
       ))}
     </>
   );
 };
+
 
 async function getSubject(subject: string) {
  const res = await fetch(`https://questions.aloc.com.ng/api/v2/m?subject=${subject}`, {
@@ -76,8 +80,14 @@ export default function Page({ params }: { params: { subject: string } }) {
    setQuizData({ subject, data });
  }
  useEffect(() => {
-   fetchData();
- });
+  async function fetchData() {
+    const subjectData = await getSubject(params.subject);
+    const { subject, data } = subjectData;
+    setQuizData({ subject, data });
+  }
+  fetchData();
+}, [params.subject]);
+
 
   return (
     <>

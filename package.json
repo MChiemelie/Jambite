@@ -20,11 +20,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "turbopack": "^0.0.1",
-    "vercel": "^29.0.0"
+    "vercel": "^29.1.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
+    "@types/aria-query": "^5.0.1",
     "@types/cacheable-request": "^8.3.2",
     "@types/jest": "^29.5.1",
     "@types/react": "^18.2.0",
