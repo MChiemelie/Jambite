@@ -1,46 +1,41 @@
-import Image from 'next/image'
 import Link from 'next/link';
-import { Inter } from 'next/font/google'
-import jamb from '../public/jamb.jpg'
+import Nav  from "../components/Nav";
 import Feature from "../components/Feature";
-
-const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
   return (
-    <>
-      <Image
-       src={jamb} alt='jamb' width={100} height={100}
-       className='p-2 m-2 rounded'/>
+    <div
+    className='bg-slate-800 space-y-4 bg:h-full'>
+      <Nav  />
        <h1
-       className='
-       m-4 p-4 md:my-16
-       font-extrabold font-Söhne text-center text-4xl 
-       md:text-7xl md:font-extrabold sm:font-extrabold leading-9 tracking-wider'
-       >
+       className='m-4 p-4 text-5xl sm:xl md:text-8xl text-center font-extrabold font-sans text-grey-200 text-zinc-50'>
        Ace Your JAMB!
        </h1>
        <p
-       className='m-2 p-2 mx-14 sm:mx-6
-       font-md font-Söhne 
-       text-center text-lg leading-7 tracking-wider sm:leading-7 sm:tracking-wider'
+       className='mx-4 md:mx-48 font-sans text-lg md:text-2xl text-center'
        >
-        Are you preparing for the JAMB Computer-Based Test? Look no further than Jambite! Our website provides free study materials and resources to help you succeed on exam day. From practice questions to online mock exams, we&apos;ve got everything you need to ace the JAMB CBT. Sign up today and start your journey towards academic success!
+        Practice your JAMB Computer Based Test, and put yourself ahead the game.
+        With a wide range of 17 subjects available, Prepare effectively for your exams by accessing a comprehensive collection of over 20,000 past questions.
        </p>
        <Link href="/dashboard"
-       className='flex items-center'>
+       className='flex'>
        <button
-       className='bg-emerald-900 p-4 m-4 align-middle rounded mx-auto'
+       className='bg-indigo-600 m-3 ml-auto p-3 rounded-sm font-sans text-lg'
        >Get Started</button>
+        <button
+       className='bg-teal-600 m-3 mr-auto p-3 rounded-sm font-sans text-lg'
+       >Contact Us</button>
        </Link>
-        <Feature
-        description="Practice with over 20, 000 JAMB past questions"
-        subjects={['English language', 'Mathematics', 'Commerce', 'Accounting', 'Biology',
-                          'Physics', 'Chemistry', 'English literature', 'Government', 
-                          'Christian Religious Knowledge', 'Geography', 'Economics', 'Islamic Religious Knowledge',
-                        'Civic Education', 'Insurance', 'Current Affairs', 'History']}
-        date='1970 - 2020'
-        />
-    </>
+      <Feature
+      heading="17 Subjects - We've got you covered!"
+      description={['English', 'Mathematics', 'Commerce', 'Accounting', 'Biology',
+                        'Physics', 'Chemistry', 'English Literature', 'Government', 
+                        'Christian Religious Knowledge', 'Geography', 'Economics', 'Islamic Religious Knowledge',
+                      'Civic Education', 'Insurance', 'Current Affairs', 'History']}
+      />
+      <Feature 
+      heading='Leverage over 5,000 past questions.'
+      description='Gain a competitive edge and boost your exam performance with our extensive collection of over 5,000 past questions. With our comprehensive question bank, you will be equipped with the knowledge and confidence to excel in your exams.'/>
+    </div>
   )
 }

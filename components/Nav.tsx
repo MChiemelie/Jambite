@@ -1,26 +1,21 @@
 'use client';
 
 import React from "react";
-import Image from 'next/image';
-import Timer from "./Timer";
-import account from '../public/account.png'
+import Image from "next/image";
+import menu from "../public/menu.png";
+
 const Nav: React.FC = () => {
   return (
-    <>
-    <menu
-    className='font-serif text-emerald-300 text-2xl
-    p-4 bg-white flex justify-between'
-    >
-      <span>Jambite</span>
-      <Timer />
-      <Image
-      src={account}
-      height={50}
-      width={50}
-      alt='account'
-      />
-    </menu>
-    </>
+    <div 
+    className="flex justify-between">
+      <div className="text-3xl md:text-4xl font-extrabold p-4 px-6">
+        <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-indigo-500">
+          JamBite
+        </span>
+      </div>
+      <Image src={menu} alt='menu' height={100} width={100}
+      className="w-8 h-8 m-5" />
+    </div>
   )
 };
 

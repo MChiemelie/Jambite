@@ -4,24 +4,21 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-light: 214, 219, 220;
+  --background-dark: 68, 70, 84;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 68, 70, 84;
-    --background-end-rgb: 68, 70, 84;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: rgb(var(--background-light)); /* Set the default light mode background color */
+
+  @media (prefers-color-scheme: dark) {
+    background-color: rgb(var(--background-dark)); /* Set the dark mode background color */
+  }
 }
