@@ -1,20 +1,20 @@
 import Image from 'next/image';
-import hero from '../public/hero.svg'
+import hero from '../public/discuss.svg'
 import Link from 'next/link';
 
 const Feature: React.FC = () => {
 
  return (
   <div
-  className='md:flex md:py-8'>
+  className='md:flex md:py-12'>
   <div
-  className='md:p-20 md:space-y-8'>
+  className='md:px-14 py-8 space-y-4'>
   <h1
-  className='text-sky-950 text-6xl md:text-8xl text-center md:text-left font-extrabold font-sans'>
+  className='text-sky-950 text-5xl md:text-7xl text-center md:text-left font-extrabold'>
   Ace Your JAMB!
   </h1>
   <p
-  className='text-sky-900 font-sans text-base md:text-xl text-center md:text-left m-auto md:m-0 w-4/5 py-4'>
+  className='text-sky-900 text-lg md:text-2xl text-center md:text-left m-auto md:m-0 w-4/5 py-4 font-medium leading-8'>
    Practice your JAMB Computer Based Test, and put yourself ahead the game.
    With a wide range of 17 subjects available, Prepare effectively for your exams by accessing a comprehensive collection of over 20,000 past questions.
   </p>
@@ -31,7 +31,7 @@ const Feature: React.FC = () => {
   </Link>
   </div>
   <Image src={hero} alt='hero' width={100} height={100}
-  className='m-auto w-3/5 md:w-1/4 md:mx-16'/>
+  className='m-auto w-4/5 md:w-1/3 md:mx-16'/>
   </div>
   
  );

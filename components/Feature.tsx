@@ -1,24 +1,35 @@
+'use client'
+
+import Image from "next/image";
+
 interface Props {
   heading: string;
-  description: string[]  | string;
+  description: string
+  subjects?: string[];
+  image: string;
 }
 
-const Feature: React.FC<Props> = ({ heading, description }) => {
+const Feature: React.FC<Props> = ({ heading, description, image, subjects }) => {
   const lastDescription = Array.isArray(description) ? description[description.length - 1] : description;
 
   return (
-    <div className="flex flex-col max-w-7xl mx-auto overflow-hidden">
-      <p className="text-center text-4xl font-sans font-medium m-6">{heading}</p>
-      <div className="text-center text-xl font-normal w-full flex flex-wrap justify-center">
-        {Array.isArray(description) ? (
-          description.map((desc, index) => (
-            <span className="p-1 font-medium" key={index}>
-              {index === description.length - 1 ? `and ${desc}.` : `${desc},`}
-            </span>
-          ))
-        ) : (
-          <span className="p-1 font-medium">{description}</span>
-        )}
+      <div className="max-w-7xl mx-auto overflow-hidden space-y-16">
+      <h1 className="text-center text-3xl font-bold m-auto text-sky-950">{heading}</h1>
+      <div className="grid md:flex space-y-6">
+      <Image src={image} alt={image} width={100} height={100}
+      className="justify-self-center w-3/5 md:w-1/3 mx-auto"/>
+      <p className="text-sky-900 text-lg md:text-2xl text-center md:text-left m-auto md:m-0 w-4/5 py-4 font-medium leading-10">{description}</p>
+        <div className="text-sky-900 text-lg md:text-2xl text-center md:text-left m-auto md:m-0 gap-2 w-4/5 py-4 font-medium leading-8 flex flex-wrap justify-center">
+          {Array.isArray(subjects) ? (
+            subjects.map((subject, index) => (
+              <span key={index}>
+                {index === subjects.length - 1 ? `and ${subject}.` : `${subject},`}
+              </span>
+            ))
+          ) : (
+            <p></p>
+          )}
+        </div>
       </div>
     </div>
   );
