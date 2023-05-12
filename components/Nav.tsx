@@ -8,7 +8,7 @@ const Nav: React.FC = () => {
   return (
     <div 
     className="flex justify-between">
-      <div className="text-2xl md:text-5xl font-extrabold p-4 px-6">
+      <div className="text-2xl md:text-4xl font-extrabold p-6 md:p-8 px-6">
         <span className="bg-clip-text text-transparent bg-indigo-900">
           JamBite
         </span>

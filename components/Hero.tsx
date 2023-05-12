@@ -10,7 +10,7 @@ const Feature: React.FC = () => {
   <div
   className='md:p-20 md:space-y-8'>
   <h1
-  className='text-sky-950 text-4xl md:text-7xl text-center md:text-left font-extrabold font-sans'>
+  className='text-sky-950 text-6xl md:text-8xl text-center md:text-left font-extrabold font-sans'>
   Ace Your JAMB!
   </h1>
   <p
