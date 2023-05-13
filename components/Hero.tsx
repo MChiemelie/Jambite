@@ -6,7 +6,7 @@ const Feature: React.FC = () => {
 
  return (
   <div
-  className='md:flex md:py-12'>
+  className='md:flex py-16 md:py-36'>
   <div
   className='md:px-14 py-8 space-y-4'>
   <h1

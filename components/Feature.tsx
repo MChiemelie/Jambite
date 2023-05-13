@@ -15,7 +15,7 @@ const Feature: React.FC<Props> = ({ heading, description, image, subjects }) => 
   return (
       <div className="max-w-7xl mx-auto overflow-hidden space-y-16">
       <h1 className="text-center text-3xl font-bold m-auto text-sky-950">{heading}</h1>
-      <div className="grid md:flex space-y-6">
+      <div className="grid md:flex space-y-4">
       <Image src={image} alt={image} width={100} height={100}
       className="justify-self-center w-3/5 md:w-1/3 mx-auto"/>
       <p className="text-sky-900 text-lg md:text-2xl text-center md:text-left m-auto md:m-0 w-4/5 py-4 font-medium leading-10">{description}</p>
