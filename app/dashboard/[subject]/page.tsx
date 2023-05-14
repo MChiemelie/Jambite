@@ -63,7 +63,7 @@ async function getSubject(subject: string) {
    headers: {
      'Accept': 'application/json',
      'Content-Type': 'application/json',
-     'AccessToken': 'QB-02741ae27ac6dae5c618',
+     'AccessToken': process.env.ACCESS_TOKEN as string,
    },
 
    method: 'GET',
