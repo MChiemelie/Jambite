@@ -14,7 +14,7 @@ const Feature: React.FC = () => {
   Ace Your JAMB!
   </h1>
   <p
-  className='text-sky-900 text-lg md:text-2xl text-center md:text-left m-auto md:m-0 w-4/5 py-4 font-medium leading-8'>
+  className='text-sky-900 text-lg md:text-2xl text-center md:text-left m-auto md:m-0 w-4/5 py-4 font-medium leading-6'>
    Practice your JAMB Computer Based Test, and put yourself ahead the game.
    With a wide range of 17 subjects available, Prepare effectively for your exams by accessing a comprehensive collection of over 20,000 past questions.
   </p>
