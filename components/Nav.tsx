@@ -78,7 +78,7 @@ function NavBar() {
                     className='bg-sky-600 text-white hover:bg-sky-800 hover:scale-90 w-full m-auto md:m-0 p-3 rounded-3xl font-sans text-base'
                     onClick={() => supabase.auth.signInWithOAuth({
                       provider: 'google'
-                    }) }>Sign Up</button>
+                    }) }>Sign Up With Google</button>
                     <button
                     className='bg-indigo-600 text-white hover:bg-indigo-800 hover:scale-90  w-full m-auto md:m-0 p-3 rounded-3xl font-sans text-base'>Sign In</button>
                   </div>
