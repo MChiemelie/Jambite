@@ -1,3 +1,6 @@
+'use client'
+
+import {useSupabase} from '../app/supabase-provider';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect} from 'react';
@@ -5,6 +8,7 @@ import { useState, useEffect} from 'react';
 function NavBar() {
   const [navbar, setNavbar] = useState(false);
   const [scroll, setScroll] = useState(false);
+  const {supabase} = useSupabase()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,7 +75,10 @@ function NavBar() {
                 <li>
                   <div className='grid md:flex p-10 gap-4'>
                     <button
-                    className='bg-sky-600 text-white hover:bg-sky-800 hover:scale-90 w-full m-auto md:m-0 p-3 rounded-3xl font-sans text-base'>Sign Up</button>
+                    className='bg-sky-600 text-white hover:bg-sky-800 hover:scale-90 w-full m-auto md:m-0 p-3 rounded-3xl font-sans text-base'
+                    onClick={() => supabase.auth.signInWithOAuth({
+                      provider: 'google'
+                    }) }>Sign Up</button>
                     <button
                     className='bg-indigo-600 text-white hover:bg-indigo-800 hover:scale-90  w-full m-auto md:m-0 p-3 rounded-3xl font-sans text-base'>Sign In</button>
                   </div>

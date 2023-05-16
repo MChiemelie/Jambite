@@ -1,5 +1,7 @@
-import './globals.css'
+'use client'
 
+import './globals.css'
+import SupabaseProvider from "./supabase-provider";
 import { Assistant } from 'next/font/google';
  
 const inter = Assistant({
@@ -7,14 +9,13 @@ const inter = Assistant({
   display: 'swap',
 });
  
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" className={inter.className}>
-      <body className='bg-gradient-to-r from-sky-300 to-sky-500 '>{children}</body>
+      <body>
+        <SupabaseProvider session={null}>{children}</SupabaseProvider></body>
     </html>
   );
 }
+
+export default RootLayout;
