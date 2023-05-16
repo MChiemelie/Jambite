@@ -12,7 +12,7 @@ const inter = Assistant({
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en" className={inter.className}>
-      <body>
+      <body className='bg-gradient'>
         <SupabaseProvider session={null}>{children}</SupabaseProvider></body>
     </html>
   );
