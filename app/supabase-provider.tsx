@@ -9,7 +9,7 @@ import type { SupabaseClient } from '@supabase/auth-helpers-nextjs';
 type MaybeSession = Session | null
 
 type SupabaseContext = {
-  supabase: SupabaseClient
+  supabase: SupabaseClient,
   session: MaybeSession
 }
 
@@ -29,7 +29,7 @@ export default function SupabaseProvider({
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(() => {
-      router.refresh()
+      router.push('/dashboard')
     })
 
     return () => {

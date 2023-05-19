@@ -1,9 +1,7 @@
-import Image from 'next/image';
-import hero from '../public/discuss.svg'
 import Link from 'next/link';
-
+import Lottie from "lottie-react";
+import hero from "../public/hero.json";
 const Feature: React.FC = () => {
-
  return (
   <div
   className='md:flex py-16 md:py-36'>
@@ -30,8 +28,7 @@ const Feature: React.FC = () => {
    </div>
   </Link>
   </div>
-  <Image src={hero} alt='hero' width={100} height={100}
-  className='m-auto w-4/5 md:w-1/3 md:mx-16'/>
+  <Lottie className='m-auto w-72 md:w-5/6 md:mx-auto' animationData={hero} />
   </div>
   
  );

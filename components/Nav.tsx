@@ -1,14 +1,18 @@
 'use client'
 
-import {useSupabase} from '../app/supabase-provider';
+import { useRouter } from 'next/navigation';
+import { useSupabase} from '../app/supabase-provider';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect} from 'react';
 
-function NavBar() {
+interface NavBarProps{}
+
+const NavBar: React.FC<NavBarProps> = () => {
+  const router = useRouter();
   const [navbar, setNavbar] = useState(false);
   const [scroll, setScroll] = useState(false);
-  const {supabase} = useSupabase()
+  const { supabase } = useSupabase();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,12 +23,20 @@ function NavBar() {
       }
     };
 
+    // Listen for authentication state changes
+    supabase.auth.onAuthStateChange((event, session) => {
+      if (event === 'SIGNED_IN') {
+        // Redirect the user to the desired URL after signing up
+        router.push('http://localhost:3000/dashboard');
+      }
+    });
+
     window.addEventListener('scroll', handleScroll);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  });
 
   return (
     <div>
