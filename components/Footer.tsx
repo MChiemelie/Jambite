@@ -1,8 +1,17 @@
+'use client';
+
 import Image from "next/image";
+import { motion } from 'framer-motion';
+import { footerVariants } from '../utils/motion';
 
 const Footer = () => {
  return (
-   <footer className="bg-gray-800 py-8">
+   <motion.footer
+   className="bg-gray-800 py-8"
+   variants={footerVariants}
+   initial="hidden"
+   whileInView="show"
+   >
      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
        <div className="flex justify-center space-x-6">
          <a href="#" className="text-gray-400 hover:text-gray-300">
@@ -36,7 +45,7 @@ const Footer = () => {
          &copy; {new Date().getFullYear()} Jambite. All rights reserved.
        </p>
      </div>
-   </footer>
+   </motion.footer>
  );
 };
 

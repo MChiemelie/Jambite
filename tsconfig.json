@@ -36,7 +36,7 @@
     ".next/types/**/*.ts",
     "*.png",
     "styles/**/*.css"
-, "app/dashboard/page.tsx"  ],
+, "app/dashboard/page.tsx", "utils/motion.js"  ],
   "exclude": [
     "node_modules"
   ]

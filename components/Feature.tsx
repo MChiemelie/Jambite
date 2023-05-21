@@ -1,5 +1,8 @@
 import React from "react";
 import Lottie from "lottie-react";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/utils/motion";
+import { useInView } from "react-intersection-observer";
 
 interface Props {
   heading: string;
@@ -12,6 +15,9 @@ const Feature: React.FC<Props> = ({ heading, description, subjects, image }) => 
   const lastDescription = Array.isArray(description)
     ? description[description.length - 1]
     : description;
+
+  const { ref, inView } = useInView();
+  const animation = fadeIn("down", "tween", 0, 0.5);
 
   const renderSubjects = () => {
     if (Array.isArray(subjects)) {
@@ -26,15 +32,34 @@ const Feature: React.FC<Props> = ({ heading, description, subjects, image }) => 
   };
 
   return (
-    <div className="max-w-7xl mx-auto overflow-hidden space-y-16">
-      <h1 className="text-center text-3xl font-bold m-auto text-sky-950">
+    <div className="max-w-7xl mx-auto overflow-hidden">
+      <motion.h1
+        variants={fadeIn("up", "tween", 0, 0.5)}
+        initial="hidden"
+        animate={inView ? "show" : "hidden"}
+        className="text-center text-3xl font-bold m-auto text-sky-950"
+        ref={ref}
+      >
         {heading}
-      </h1>
+      </motion.h1>
       <div className="grid md:flex space-y-4">
-        <Lottie animationData={image} className="w-4/5 mx-auto"></Lottie>
-        <p className="text-sky-900 text-lg md:text-2xl text-center md:text-left m-auto md:m-0 w-4/5 py-4 font-medium leading-10">
+        <motion.div
+          variants={animation}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+          ref={ref}
+        >
+          <Lottie animationData={image} className="w-4/5 mx-auto"></Lottie>
+        </motion.div>
+        <motion.p
+          className="text-sky-900 text-lg md:text-2xl text-center md:text-left m-auto md:m-0 w-4/5 font-medium leading-10"
+          variants={fadeIn("left", "tween", 0, 0.5)}
+          initial="hidden"
+          animate={inView ? "show" : "hidden"}
+          ref={ref}
+        >
           {lastDescription}
-        </p>
+        </motion.p>
         <div className="text-sky-900 text-lg md:text-2xl text-center md:text-left m-auto md:m-0 gap-2 w-4/5 py-4 font-medium leading-8 flex flex-wrap justify-center">
           {renderSubjects()}
         </div>

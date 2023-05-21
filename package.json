@@ -23,9 +23,11 @@
   "cacheable-request": "^10.2.10",
   "dotenv": "^16.0.3",
   "eslint": "8.39.0",
+  "framer-motion": "^10.12.12",
   "lottie-react": "^2.4.0",
   "react": "^18.2.0",
   "react-dom": "^18.2.0",
+  "react-intersection-observer": "^9.4.3",
   "turbopack": "^0.0.1",
   "vercel": "^29.3.0"
  },

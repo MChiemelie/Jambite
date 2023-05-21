@@ -1,13 +1,13 @@
 'use client'
 
-import { useSupabase} from '../app/supabase-provider';
+import { useSupabase} from '../utils/supabase-provider';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect} from 'react';
+import { navVariants } from '../utils/motion';
 
-interface NavBarProps{}
-
-const NavBar: React.FC<NavBarProps> = () => {
+const NavBar: React.FC = () => {
   const [navbar, setNavbar] = useState(false);
   const [scroll, setScroll] = useState(false);
   const { supabase } = useSupabase();
@@ -25,8 +25,11 @@ const NavBar: React.FC<NavBarProps> = () => {
     });
     
   return (
-    <div>
-      <nav className={`w-full fixed top-0 left-0 right-0 z-10 ${scroll ? ' bg-sky-400' : ''}`}>
+      <motion.nav 
+      className={`w-full fixed top-0 left-0 right-0 z-10 ${scroll ? ' bg-sky-400' : ''}`}
+      variants={navVariants}
+      initial="hidden"
+      whileInView="show">
       <div className={`justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8 ${scroll ? 'scale-y-80' : ''}`}>
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -85,8 +88,7 @@ const NavBar: React.FC<NavBarProps> = () => {
             </div>
           </div>
         </div>
-      </nav>
-    </div>
+      </motion.nav>
   );
 }
 

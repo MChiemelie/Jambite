@@ -1,7 +1,7 @@
 import { createServerComponentSupabaseClient } from '@supabase/auth-helpers-nextjs'
 import { headers, cookies } from 'next/headers'
 import './globals.css'
-import SupabaseProvider from './supabase-provider'
+import SupabaseProvider from '../utils/supabase-provider'
 import { Assistant } from 'next/font/google';
 
 export const metadata = {
