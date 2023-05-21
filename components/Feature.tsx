@@ -32,7 +32,7 @@ const Feature: React.FC<Props> = ({ heading, description, subjects, image }) => 
   };
 
   return (
-    <div className="max-w-7xl mx-auto overflow-hidden">
+    <div className="max-w-7xl mx-auto overflow-hidden space-y-8">
       <motion.h1
         variants={fadeIn("up", "tween", 0, 0.5)}
         initial="hidden"
