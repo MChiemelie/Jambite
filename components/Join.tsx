@@ -8,7 +8,7 @@ const Join = () => {
       variants={zoomIn(1, 1)}
       initial="hidden"
       whileInView="show"
-      className="bg-blue-500 py-6">
+      className="bg-blue-300 py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <h2 className="text-xl font-bold text-white sm:text-4xl">
