@@ -5,6 +5,8 @@ import Nav from "../components/Nav";
 import Feature from "../components/Feature";
 import Hero from "../components/Hero";
 import Testimonial from "../components/Testimonial";
+import Join from "../components/Join";
+import Footer from "../components/Footer";
 
 import learn from "../public/learn.json";
 import review from "../public/review.json";
@@ -106,6 +108,8 @@ export default function Home() {
           />
       ))}
       <Testimonial testimonials={testimonials} />
+      <Join/>
+      <Footer />
     </div>
   );
 }
