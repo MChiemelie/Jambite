@@ -57,6 +57,38 @@ const testimonials=[
     testimonial:
       "I couldn't believe it when I saw my JAMB score of 320. Jambite's comprehensive study materials and practice tests were instrumental in my success. I highly recommend Jambite to anyone aiming for a high score!",
   },
+  {
+    id: 3,
+    name: "Jane Smith",
+    image: '/a3.jpg',
+    score: 320,
+    testimonial:
+      "I couldn't believe it when I saw my JAMB score of 320. Jambite's comprehensive study materials and practice tests were instrumental in my success. I highly recommend Jambite to anyone aiming for a high score!",
+  },
+  {
+    id: 4,
+    name: "Jane Smith",
+    image: '/a4.jpg',
+    score: 320,
+    testimonial:
+      "I couldn't believe it when I saw my JAMB score of 320. Jambite's comprehensive study materials and practice tests were instrumental in my success. I highly recommend Jambite to anyone aiming for a high score!",
+  },
+  {
+    id: 5,
+    name: "Jane Smith",
+    image: '/a5.jpg',
+    score: 320,
+    testimonial:
+      "I couldn't believe it when I saw my JAMB score of 320. Jambite's comprehensive study materials and practice tests were instrumental in my success. I highly recommend Jambite to anyone aiming for a high score!",
+  },
+  {
+    id: 6,
+    name: "Jane Smith",
+    image: '/a6.jpg',
+    score: 320,
+    testimonial:
+      "I couldn't believe it when I saw my JAMB score of 320. Jambite's comprehensive study materials and practice tests were instrumental in my success. I highly recommend Jambite to anyone aiming for a high score!",
+  },
 ];
 
 export default function Home() {
