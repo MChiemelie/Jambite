@@ -9,7 +9,7 @@ import Join from "../components/Join";
 import Footer from "../components/Footer";
 
 import learn from "../public/learn.json";
-import review from "../public/review.json";
+import revieww from "../public/revieww.json";
 import test from "../public/test.json";
 import exams from "../public/exams.json";
 
@@ -28,7 +28,7 @@ const featureData = [
       'Christian Religious Knowledge', 'Geography', 'Economics', 'Islamic Religious Knowledge',
       'Civic Education', 'Insurance', 'Current Affairs', 'History'
     ],
-    image: review,
+    image: revieww,
   },
   {
     heading: "Leverage over 5,000 past questions.",

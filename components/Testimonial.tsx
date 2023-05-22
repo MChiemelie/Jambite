@@ -23,17 +23,17 @@ const Testimonial: React.FC<Props> = ({testimonials}) => {
 
   return (
     <div
-      className="grid grid-cols-1 md:grid-cols-2 gap-4 mx-8">
+      className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mx-8">
       {testimonials.map((testimonial) => (
         <motion.figure
           key={testimonial.id}
           variants={fadeIn("up", "spring", 0, 2)}
           initial="hidden"
           whileInView="show"
-          className="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800"
+          className="md:flex bg-slate-100 rounded-md p-8 md:p-0 dark:bg-slate-800"
         >
           <Image
-            className="w-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
+            className="w-24 md:w-48 md:h-auto md:rounded-sm rounded-full mx-auto"
             src={`${testimonial.image}`}
             alt={testimonial.name}
             width={384}
@@ -41,7 +41,7 @@ const Testimonial: React.FC<Props> = ({testimonials}) => {
           />
           <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
             <blockquote>
-              <p className="text-base font-medium">
+              <p className="text-basej font-medium">
                 {testimonial.testimonial}
               </p>
             </blockquote>

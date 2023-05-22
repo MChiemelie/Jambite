@@ -3,13 +3,16 @@ import Link from 'next/link';
 import Lottie from "lottie-react";
 import hero from "../public/hero.json";
 import { textVariant, zoomIn } from '@/utils/motion';
+import { useSupabase} from '../utils/supabase-provider';
 
 const Feature: React.FC = () => {
+  const { supabase } = useSupabase();
+
  return (
   <div
-  className='md:flex py-32 md:py-36 space-y-8'>
+  className='md:flex py-32 md:py-48 md:px-20 space-y-8'>
   <div
-  className='md:px-14 space-y-4'>
+  className='space-y-6 md:w-11/12'>
   <motion.h1
   variants={textVariant(3)}
   initial="hidden"
@@ -30,13 +33,15 @@ const Feature: React.FC = () => {
   variants={zoomIn(5, 1)}
   initial="hidden"
   whileInView="show"
-  className='bg-sky-600 hover:bg-sky-800 hover:scale-90 w-4/5 mx-auto md:m-0 md:w-1/3 p-3 rounded-sm font-sans text-base'
+  className='bg-[#344FC8] hover:bg-[#2a345f] w-4/5 md:w-1/2 mx-auto md:m-0  p-3 rounded-sm font-sans text-base text-white'
+  onClick={() => supabase.auth.signInWithOAuth({
+    provider: 'google'
+  }) }
   >Get Started</motion.button>
   </Link>
   </div>
-  <Lottie className='m-auto w-2/3 md:w-5/6 md:mx-auto' animationData={hero} />
+  <Lottie className='mx-auto w-2/3 md:w-2/5' animationData={hero} />
   </div>
-  
  );
 };
 

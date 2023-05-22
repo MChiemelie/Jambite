@@ -17,7 +17,7 @@ const Feature: React.FC<Props> = ({ heading, description, subjects, image }) => 
     : description;
 
   const { ref, inView } = useInView();
-  const animation = fadeIn("down", "tween", 0, 0.5);
+  const animation = fadeIn("down", "tween", 0, 2);
 
   const renderSubjects = () => {
     if (Array.isArray(subjects)) {
@@ -32,37 +32,37 @@ const Feature: React.FC<Props> = ({ heading, description, subjects, image }) => 
   };
 
   return (
-    <div className="max-w-7xl mx-auto overflow-hidden space-y-8">
+    <div className="px-10 md:px-20 py-16 md:py-36 overflow-hidden space-y-8">
       <motion.h1
-        variants={fadeIn("up", "tween", 0, 0.5)}
+        variants={fadeIn("up", "tween", 0, 1)}
         initial="hidden"
         animate={inView ? "show" : "hidden"}
-        className="text-center text-3xl font-bold m-auto text-sky-950"
+        className="text-center text-3xl md:text-5xl font-bold text-sky-950"
         ref={ref}
       >
         {heading}
       </motion.h1>
-      <div className="grid md:flex space-y-4">
+      <div className="p-0 grid md:flex space-y-4">
         <motion.div
           variants={animation}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
           ref={ref}
         >
-          <Lottie animationData={image} className="w-4/5 mx-auto"></Lottie>
+          <Lottie animationData={image} className="w-4/5 md:w-96 md:h-96 mx-auto"></Lottie>
         </motion.div>
         <motion.p
-          className="text-sky-900 text-lg md:text-2xl text-center md:text-left m-auto md:m-0 w-4/5 font-medium leading-10"
-          variants={fadeIn("left", "tween", 0, 0.5)}
+          className="p-0 grid place-content-center text-sky-900 text-lg md:text-3xl text-center md:text-left m-auto md:w-2/5 font-medium leading-10 md:leading-9 md:tracking-wide"
+          variants={fadeIn("left", "tween", 0, 3)}
           initial="hidden"
           animate={inView ? "show" : "hidden"}
           ref={ref}
         >
           {lastDescription}
-        </motion.p>
-        <div className="text-sky-900 text-lg md:text-2xl text-center md:text-left m-auto md:m-0 gap-2 w-4/5 py-4 font-medium leading-8 flex flex-wrap justify-center">
+          <div className="text-sky-900 text-lg md:text-lg gap-1 font-medium leading-8 flex flex-wrap py-2 md:leading-20 md:tracking-wide">
           {renderSubjects()}
         </div>
+        </motion.p>
       </div>
     </div>
   );
