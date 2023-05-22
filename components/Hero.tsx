@@ -7,7 +7,7 @@ import { textVariant, zoomIn } from '@/utils/motion';
 const Feature: React.FC = () => {
  return (
   <div
-  className='md:flex py-16 md:py-36 space-y-8'>
+  className='md:flex py-32 md:py-36 space-y-8'>
   <div
   className='md:px-14 space-y-4'>
   <motion.h1

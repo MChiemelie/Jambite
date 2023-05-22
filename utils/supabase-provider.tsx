@@ -29,7 +29,7 @@ export default function SupabaseProvider({
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(() => {
-      router.push('/dashboard');
+      router.refresh();
     })
 
     return () => {

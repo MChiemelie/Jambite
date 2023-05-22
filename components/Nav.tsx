@@ -34,7 +34,7 @@ const NavBar: React.FC = () => {
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link href="/">
-                <h2 className={`text-2xl md:text-4xl text-sky-900 font-bold ${scroll ? 'text-xl' : ''}`}>Jambite</h2>
+                <Image src='/logo.png' alt='logo' width={80} height={80} className={`${scroll ? 'scale-75 w-12' : ''}`}/>
               </Link>
               <div className="md:hidden">
                 <button
