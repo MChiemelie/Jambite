@@ -34,7 +34,7 @@ const NavBar: React.FC = () => {
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link href="/">
-                <Image src='/logo.png' alt='logo' width={80} height={80} className={`w-12 sm:w-15 md:w-20 ${scroll ? 'scale-y-80 w-12' : ''}`}/>
+                <Image src='/logo.png' alt='logo' width={80} height={80} className={`w-12 sm:w-15 md:w-20 ${scroll ? 'scale-y-80 w-8' : ''}`}/>
               </Link>
               <div className="md:hidden">
                 <button
@@ -42,7 +42,7 @@ const NavBar: React.FC = () => {
                   onClick={() => setNavbar(!navbar)}
                 >
                   {navbar ? (
-                    <Image src="/close.svg" width={30} height={30} alt="logo" className=' w-6 md:w-8'/>
+                    <Image src="/close.svg" width={30} height={30} alt="logo" className='w-6 md:w-8'/>
                   ) : (
                     <Image src="/menu.svg" width={30} height={30} alt="logo"
                       className="focus:border-none active:border-none w-6 md:w-8"/>

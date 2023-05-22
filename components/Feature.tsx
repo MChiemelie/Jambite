@@ -59,7 +59,7 @@ const Feature: React.FC<Props> = ({ heading, description, subjects, image }) => 
           ref={ref}
         >
           {lastDescription}
-          <div className="text-sky-900 text-lg md:text-lg gap-1 font-medium leading-8 flex flex-wrap py-2 md:leading-20 md:tracking-wide">
+          <div className="text-sky-900 text-lg text-justify md:text-lg gap-1 font-medium leading-8 flex flex-wrap py-2 md:leading-20 md:tracking-wide">
           {renderSubjects()}
         </div>
         </motion.p>

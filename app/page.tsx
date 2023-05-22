@@ -28,7 +28,7 @@ const featureData = [
       'Christian Religious Knowledge', 'Geography', 'Economics', 'Islamic Religious Knowledge',
       'Civic Education', 'Insurance', 'Current Affairs', 'History'
     ],
-    image: revieww,
+    image: exams,
   },
   {
     heading: "Leverage over 5,000 past questions.",
@@ -38,7 +38,7 @@ const featureData = [
   {
     heading: "Accurate Answers and Solutions",
     description: "Rest assured, our answers and solutions have undergone rigorous review by professionals and top tutors. We prioritize accuracy and quality to provide you with reliable guidance.",
-    image: exams,
+    image: revieww,
   }
 ];
 

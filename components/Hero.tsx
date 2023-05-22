@@ -28,7 +28,7 @@ const Feature: React.FC = () => {
    Practice your JAMB Computer Based Test, and put yourself ahead the game.
    With a wide range of 17 subjects available, Prepare effectively for your exams by accessing a comprehensive collection of over 20,000 past questions.
   </motion.p>
-  <Link href="/dashboard" className='grid md:flex space-x-auto md:space-x-6 space-y-3 md:space-y-0 md:mx-0 md:my-6'>
+  <Link href="/" className='grid md:flex space-x-auto md:space-x-6 space-y-3 md:space-y-0 md:mx-0 md:my-6'>
   <motion.button
   variants={zoomIn(5, 1)}
   initial="hidden"
