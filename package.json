@@ -29,7 +29,7 @@
   "react-dom": "^18.2.0",
   "react-intersection-observer": "^9.4.3",
   "turbopack": "^0.0.1",
-  "vercel": "^29.3.0"
+  "vercel": "^29.4.0"
  },
  "devDependencies": {
   "@testing-library/jest-dom": "^5.16.5",
